@@ -30,15 +30,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    /*private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "Boundry")
-        {
-            Debug.Log("I'm hitting the left boundry");
-            transform.position = new Vector2(transform.position.x, transform.position.y);
-        }
-           
-    }*/
 
     
 

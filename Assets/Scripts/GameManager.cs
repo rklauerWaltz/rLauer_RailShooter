@@ -1,18 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public static GameManager Instance;
+
+    public EnemyBehavior enemies;
+
+    public int score;
+
+
+
+    private void Awake()
     {
-        
+        if (Instance == null) Instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void TriggerChange()
     {
-        
+        enemies.ChangeDirection();
     }
+
+    public void UpdateEnemies()
+    {
+        enemies.AdjustColliderSize();
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(0);
+        }
+    }
+
 }

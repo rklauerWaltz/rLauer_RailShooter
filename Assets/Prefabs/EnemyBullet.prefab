@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4453647834684089258}
   - component: {fileID: 2908548990669867332}
-  - component: {fileID: 5907892686792040894}
+  - component: {fileID: 1306490843014651960}
   m_Layer: 0
-  m_Name: PlayerBullet
+  m_Name: EnemyBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
---- !u!114 &5907892686792040894
+--- !u!114 &1306490843014651960
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,11 +88,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1317857211500695044}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e5e978dd879b42469e1cc76170e6843, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e840ca1c5f594c44a144476e07e932f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
-  killLimit: 8.5
+  moveSpeed: 3
+  killLimit: -8.5
 --- !u!1 &2751024981539000269
 GameObject:
   m_ObjectHideFlags: 0
