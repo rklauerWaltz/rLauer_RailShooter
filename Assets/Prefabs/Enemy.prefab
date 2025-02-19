@@ -244,6 +244,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c28e45c316b265041baf4bc153d7f5e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointvalue: 0
+  deathSprite: {fileID: 1644987757367651604, guid: e200f4719473051458cebf575bbb62d7, type: 3}
 --- !u!1 &5983471590017033898
 GameObject:
   m_ObjectHideFlags: 0

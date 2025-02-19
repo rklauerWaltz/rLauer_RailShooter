@@ -9,9 +9,11 @@ public class PlayerBullet : MonoBehaviour
 
     public float killLimit = 8.5f;
 
+    private PlayerShoot playerShoot;
+
     public void PlayerSet(PlayerShoot player)
     {
-
+        playerShoot = player;
     }
 
     // Update is called once per frame
@@ -20,7 +22,13 @@ public class PlayerBullet : MonoBehaviour
         transform.Translate(Vector2.up * moveSpeed * Time.deltaTime);
         if (transform.position.y >= killLimit)
         {
+            BulletDeath();
             Destroy(this.gameObject);
         }
+    }
+
+    public void BulletDeath()
+    {
+        playerShoot.ResetBullet();
     }
 }
