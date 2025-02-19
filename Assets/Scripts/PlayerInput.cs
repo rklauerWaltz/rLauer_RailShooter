@@ -16,9 +16,14 @@ public class PlayerInput : MonoBehaviour
         hInput = Input.GetAxisRaw("Horizontal");
         playerMovement.Movement(hInput);
 
-        if(Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump"))
         {
             playerShoot.FireBullet();
         }
+
+        
+
+
     }
+
 }

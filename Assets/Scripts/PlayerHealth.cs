@@ -2,18 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.GetComponent<PlayerBullet>())
+        if (collision.gameObject.GetComponent<EnemyBullet>())
         {
             Destroy(collision.gameObject);
-            GameManager.Instance.UpdateEnemies();
-            Destroy(this.gameObject);
-            
+            gameObject.SetActive(false);
+
         }
     }
-
 }

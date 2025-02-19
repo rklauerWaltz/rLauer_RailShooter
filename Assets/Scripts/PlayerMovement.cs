@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Movement(float hInput)
     {
-        transform.Translate(Vector2.right * hInput * moveSpeed * Time.deltaTime);
+        transform.Translate(Vector2.right * hInput * moveSpeed * Time.deltaTime); 
 
 
         //Keep the player from moving beyond the xRange
