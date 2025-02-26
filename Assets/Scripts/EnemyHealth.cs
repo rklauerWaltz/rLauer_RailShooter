@@ -9,6 +9,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if(collision.GetComponent<PlayerBullet>())
         {
+            collision.gameObject.GetComponent<PlayerBullet>().BulletDeath();
             Destroy(collision.gameObject);
             GameManager.Instance.UpdateEnemies();
             Destroy(this.gameObject);

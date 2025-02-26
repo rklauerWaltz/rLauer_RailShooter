@@ -132,7 +132,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  killLimit: 8.5
+  killLimit: 6.1
+  player: {fileID: 0}
 --- !u!50 &-3682733001995933080
 Rigidbody2D:
   serializedVersion: 4

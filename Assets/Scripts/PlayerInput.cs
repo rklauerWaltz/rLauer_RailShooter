@@ -13,13 +13,17 @@ public class PlayerInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        hInput = Input.GetAxisRaw("Horizontal");
-        playerMovement.Movement(hInput);
-
-        if (Input.GetButtonDown("Jump"))
+        if (GameManager.Instance.gameActive == true)
         {
-            playerShoot.FireBullet();
+            hInput = Input.GetAxisRaw("Horizontal");
+            playerMovement.Movement(hInput);
+
+            if (Input.GetButtonDown("Jump"))
+            {
+                playerShoot.FireBullet();
+            }
         }
+        
 
         
 

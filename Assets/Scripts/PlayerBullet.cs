@@ -8,11 +8,9 @@ public class PlayerBullet : MonoBehaviour
 
     public float killLimit = 8.5f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public PlayerShooting player;
+
+   
 
     // Update is called once per frame
     void Update()
@@ -21,7 +19,18 @@ public class PlayerBullet : MonoBehaviour
 
         if(transform.position.y >= killLimit)
         {
+            BulletDeath();
             Destroy(this.gameObject);
         }
+    }
+
+    public void PlayerSet(PlayerShooting playerShoot)
+    {
+        player = playerShoot;
+    }
+
+    public void BulletDeath()
+    {
+        player.ResetBullet();
     }
 }

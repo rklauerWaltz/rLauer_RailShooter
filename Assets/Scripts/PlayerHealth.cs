@@ -9,8 +9,17 @@ public class PlayerHealth : MonoBehaviour
         if (collision.gameObject.GetComponent<EnemyBullet>())
         {
             Destroy(collision.gameObject);
+            GameManager.Instance.GameOver();
+            GetComponent<AudioSource>().Play();
             gameObject.SetActive(false);
 
         }
+
+        if(collision.gameObject.GetComponent<EnemyHealth>())
+        {
+            gameObject.SetActive(false);
+        }
+
+        
     }
 }
