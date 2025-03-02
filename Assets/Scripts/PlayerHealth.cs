@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-
+    public bool isAlive = true;
     private void Start()
     {
         
@@ -12,9 +12,15 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.GetComponent<EnemyBullet>())
+        if(collision.gameObject.GetComponent<EnemyBullet>() || collision.gameObject.GetComponent<EnemyHealth>() && isAlive == true)
         {
-            Destroy(this.gameObject);
+            if(GetComponentInChildren<Animator>() != null)
+            {
+                GetComponentInChildren<Animator>().SetBool("isAlive", false);
+                isAlive = false;
+                GameManager.Instance.playerLives--;
+                GameManager.Instance.GameOverCheck();
+            }
         }
     }
 

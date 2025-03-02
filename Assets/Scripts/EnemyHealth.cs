@@ -8,6 +8,11 @@ public class EnemyHealth : MonoBehaviour
 
     [SerializeField] private GameObject deathSprite;
 
+    private void Start()
+    {
+        GameManager.Instance.enemyList.Add(this.gameObject);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.GetComponent<PlayerBullet>())
@@ -18,7 +23,7 @@ public class EnemyHealth : MonoBehaviour
             UserInterfaceManager.Instance.UpdateScore(pointvalue);
             collision.gameObject.GetComponent<PlayerBullet>().BulletDeath();
             Instantiate(deathSprite, transform.position, Quaternion.identity);
-            Destroy(this.gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

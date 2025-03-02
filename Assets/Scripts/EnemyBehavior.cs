@@ -22,6 +22,7 @@ public class EnemyBehavior : MonoBehaviour
 
     private void Update()
     {
+        if(GameManager.Instance.gameActive == true)
         transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
 
     }
@@ -65,5 +66,11 @@ public class EnemyBehavior : MonoBehaviour
 
         boxCollider.offset = bounds.center - (Vector3)transform.position;
         boxCollider.size = bounds.size;
+
+        if (boxCollider.size.x <= 0.1f || boxCollider.size.y <= 0.1f)
+        {
+            boxCollider.size = new Vector2(1f, 1f);
+        }
+        
     }
 }

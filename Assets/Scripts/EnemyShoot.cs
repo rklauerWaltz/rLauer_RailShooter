@@ -24,15 +24,16 @@ public class EnemyShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ShootLoop();
+        if(GameManager.Instance.gameActive == true)
+        {
+            ShootLoop();
+        }
     }
 
 
 
     void ShootLoop()
     {
-
-
         shootCountdown += Time.deltaTime;
         if (shootCountdown >= shootTime)
         {

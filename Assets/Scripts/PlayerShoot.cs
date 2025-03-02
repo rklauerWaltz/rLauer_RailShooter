@@ -1,10 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class PlayerShoot : MonoBehaviour
 {
-
     [SerializeField] private GameObject playerBullet;
     [SerializeField] private Transform bulletSpawn;
 
@@ -15,18 +13,6 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] float shotDelay = 1.5f;
     public bool canShoot = true;
     private bool bulletActive;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    void Awake()
-    {
-
-    }
 
     private void Update()
     {
@@ -49,6 +35,12 @@ public class PlayerShoot : MonoBehaviour
             bullet.GetComponent<PlayerBullet>().PlayerSet(this);
             bulletActive = true;
             canShoot = false;
+
+            if (GetComponentInChildren<Animator>() != null)
+            {
+                GetComponentInChildren<Animator>().SetTrigger("fire");
+            }
+
         }
         
       
@@ -59,5 +51,4 @@ public class PlayerShoot : MonoBehaviour
         shootTime = 0f;
         canShoot = true;
     }
-
 }
